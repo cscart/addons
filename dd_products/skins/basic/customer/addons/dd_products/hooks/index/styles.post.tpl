@@ -1,0 +1,1 @@
+<link href="{$config.skin_path}/addons/dd_products/styles.css" rel="stylesheet" type="text/css" />

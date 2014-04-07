@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+	<id>dd_products</id>
+	<name><![CDATA[Drag&drop products]]></name>
+	<version>1.0</version>
+	<priority>2700</priority>
+	<position>200</position>
+	<status>active</status>
+	<translations>
+		<item for="name" lang="RU"><![CDATA[Drag&Drop товары]]></item>
+	</translations>
+</addon>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<addon>
+	<id>custom_countries_selectbox</id>
+	<name>Custom countries selectbox</name>
+	<priority>4500</priority>
+	<position></position>
+	<status>active</status>
+	<dependencies></dependencies>
+	<translations></translations>
+	<addon_version>1.0</addon_version>
+	<compatible_version>2.1.3</compatible_version>
+	<opt_settings>
+		<item id="selectbox_style">
+			<name>Countries selectbox style</name>
+			<type>selectbox</type>
+			<default_value>popular</default_value>
+			<variants>
+				<item id="popular">
+					<name>Show most popular countries at first</name>
+				</item>
+				<item id="alphabetical">
+					<name>Show only alphabetical list</name>
+				</item>
+				<item id="manual">
+					<name>Show countries from the manual list at first</name>
+				</item>
+			</variants>
+		</item>
+		<item id="popular_count">
+			<name>Number of popular countries</name>
+			<type>input</type>
+			<default_value>3</default_value>
+		</item>
+		<item>
+			<custom_option_function>fn_custom_countries_selectbox_manual_countries_list</custom_option_function>
+		</item>
+	</opt_settings>
+	
+	<opt_language_variables>
+		<item lang="EN" id="ccs_manual_list">Manual list</item>
+		<item lang="EN" id="ccs_most_popular">Most popular</item>
+		<item lang="EN" id="ccs_alphabetical">Alphabetical</item>
+		<item lang="EN" id="ccs_manual_list_tooltip">Select countries that will be displayed first.</item>
+	</opt_language_variables>
+</addon>

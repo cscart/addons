@@ -1,0 +1,11 @@
+How to use addons repository:
+1. Check out the repository with CS-Cart to, e.g. /www/cs-cart
+2. Checkout this repository to somewhere (you did it already as you read this instruction :)), e.g. /www/addons
+3. To work with addon, run:
+     ./addon.sh my_addon work /www/cs-cart
+   
+   After that you can install addon from admin area
+   
+4. To commit changes, run:
+     ./addon.sh my_addon commit /www/cs-cart
+     svn commit my_addon (or do it via your favourite svn client)

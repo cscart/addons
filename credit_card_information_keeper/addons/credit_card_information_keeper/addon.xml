@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<addon scheme='2.0'>
+	<id>credit_card_information_keeper</id>
+	<name>Credit card information keeper</name>
+	<description>Allow users to store credit card information in profiles</description>
+	<version>1.0</version>
+	<priority>5000</priority>
+	<position>0</position>
+	<status>active</status>
+	<queries>
+		<item for="install">
+			ALTER TABLE `?:user_profiles` ADD `credit_cards` text NOT NULL default ''
+		</item>
+		<item for="uninstall">
+			ALTER TABLE `?:user_profiles` DROP `credit_cards`
+		</item> 
+	</queries>
+</addon>

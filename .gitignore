@@ -1,0 +1,13 @@
+_TEMP
+TODO
+*.sw*
+*.bak
+*~
+.buildpath
+.project
+.idea
+/nbproject
+lastLineRemover.php
+.DS_Store
+*.sublime-project
+*.sublime-workspace

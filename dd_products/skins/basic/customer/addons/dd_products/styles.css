@@ -1,0 +1,34 @@
+/*
+*/
+
+.cm-draggable-cart {
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	top: 100px;
+	right: 10px;
+	background-color: transparent;
+	opacity: 0.3;
+	-moz-opacity: 0.3;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=30)";
+	filter: alpha(opacity=30);
+}
+
+.cm-draggable-active-cart {
+	
+}
+
+.cm-draggable-hover-cart {
+	
+}
+
+#dd_cart_content {
+	position: fixed;
+	width: 180px;
+	background-color: #ffffff;
+	
+	opacity: 0;
+	-moz-opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+	filter: alpha(opacity=0);
+}
