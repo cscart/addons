@@ -1,0 +1,18 @@
+{
+	"files": {
+		"app/addons/upgrade/addon.xml": {"status": "changed", "hash": "b0911a0d64453ab06b0872c9eb6fbc34"},
+		"app/addons/upgrade/func.php": {"status": "changed", "hash": "4fefb0fed1496f179a14b7e872eb16d9"},
+		"app/addons/upgrade/robots.txt": {"status": "deleted", "hash": "df32e836628b51af570dd2425cb3e97e"},
+		"js/addons/upgrade/up.js": {"status": "new"},
+		"var/themes_repository/responsive/templates/addons/upgrade/hooks/products/image_wrap.post.tpl": {"status": "new"}
+	},
+	"migrations": [
+		"20141022083711_addon_update_version.php"
+	],
+	"languages": [
+		"en.po"
+	],
+	"validators": [
+		"CheckFileValidator"
+	]
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>upgrade</id>
+    <version>1.1</version>
+    <priority>200</priority>
+    <position>200</position>
+    <default_language>en</default_language>
+    <status>active</status>
+    <name>Demo upgrade add-on v1.1</name>
+    <description>This is description of upgraded addon v1.1</description>
+</addon>

@@ -1,0 +1,17 @@
+msgid ""
+msgstr "Project-Id-Version: tygh"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Languages::new_language_variable"
+msgid "Upgrade completed"
+msgstr "Upgrade completed"
+
+msgctxt "Addons::name::upgrade"
+msgid "Demo upgrade add-on v1.2"
+msgstr "Demo upgrade add-on v1.2"
+
+msgctxt "Addons::description::upgrade"
+msgid "This is description of upgraded addon v1.2"
+msgstr "This is description of upgraded addon v1.2"
