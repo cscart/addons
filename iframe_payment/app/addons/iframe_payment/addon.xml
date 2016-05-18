@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+    <id>iframe_payment</id>
+    <version>0.1.0</version>
+    <default_language>en</default_language>
+    <priority>100</priority>
+    <status>active</status>
+    <name>Iframe Payment</name>
+    <description>Implements sample payment processor using iframe mode.</description>
+    <functions>
+        <item for="install">fn_iframe_payment_add_payment_processor</item>
+        <item for="uninstall">fn_iframe_payment_delete_payment_processor</item>
+    </functions>
+</addon>
