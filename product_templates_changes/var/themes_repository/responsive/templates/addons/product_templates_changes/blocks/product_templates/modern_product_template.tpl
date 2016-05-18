@@ -6,6 +6,9 @@
             {assign var="obj_id" value=$product.product_id}
             {include file="common/product_data.tpl" product=$product but_role="big" but_text=__("add_to_cart")}
             <div class="ty-product-block__img-wrapper">
+                {if !$hide_title}
+                        <h1 class="ty-product-block-title" {live_edit name="product:product:{$product.product_id}"}>{$product.product nofilter}</h1>
+                {/if}
                 {hook name="products:image_wrap"}
                     {if !$no_images}
                         <div class="ty-product-block__img cm-reload-{$product.product_id}" id="product_images_{$product.product_id}_update">
@@ -17,16 +20,10 @@
                         <!--product_images_{$product.product_id}_update--></div>
                     {/if}
                 {/hook}
-            </div>
-            <div class="ty-product-block__left">
                 {assign var="form_open" value="form_open_`$obj_id`"}
                 {$smarty.capture.$form_open nofilter}
 
                 {hook name="products:main_info_title"}
-                    {if !$hide_title}
-                        <h1 class="ty-product-block-title" {live_edit name="product:product:{$product.product_id}"}>{$product.product nofilter}</h1>
-                    {/if}
-
                     {hook name="products:brand"}
                         <div class="brand">
                             {include file="views/products/components/product_features_short_list.tpl" features=$product.header_features}
@@ -39,14 +36,6 @@
                 {assign var="clean_price" value="clean_price_`$obj_id`"}
                 {assign var="list_discount" value="list_discount_`$obj_id`"}
                 {assign var="discount_label" value="discount_label_`$obj_id`"}
-
-                {hook name="products:promo_text"}
-                {if $product.promo_text}
-                <div class="ty-product-block__note">
-                    {$product.promo_text nofilter}
-                </div>
-                {/if}
-                {/hook}
 
                 <div class="{if $smarty.capture.$old_price|trim || $smarty.capture.$clean_price|trim || $smarty.capture.$list_discount|trim}prices-container {/if}price-wrap">
                     {if $smarty.capture.$old_price|trim || $smarty.capture.$clean_price|trim || $smarty.capture.$list_discount|trim}
@@ -127,10 +116,29 @@
 
                 {hook name="products:product_detail_bottom"}
                 {/hook}
+            </div>
+            <div class="ty-product-block__left">
 
                 {if $show_product_tabs}
-                {include file="views/tabs/components/product_popup_tabs.tpl"}
-                {$smarty.capture.popupsbox_content nofilter}
+                    {include file="views/tabs/components/product_popup_tabs.tpl"}
+                    {$smarty.capture.popupsbox_content nofilter}
+                {/if}
+
+
+                {if $smarty.capture.hide_form_changed == "Y"}
+                    {assign var="hide_form" value=$smarty.capture.orig_val_hide_form}
+                {/if}
+
+                {if $show_product_tabs}
+
+                    {include file="views/tabs/components/product_tabs.tpl"}
+
+                    {if $blocks.$tabs_block_id.properties.wrapper}
+                        {include file=$blocks.$tabs_block_id.properties.wrapper content=$smarty.capture.tabsbox_content title=$blocks.$tabs_block_id.description}
+                    {else}
+                        {$smarty.capture.tabsbox_content nofilter}
+                    {/if}
+
                 {/if}
             </div>
         {/if}
@@ -138,21 +146,6 @@
     {/hook}
     </div>
 
-    {if $smarty.capture.hide_form_changed == "Y"}
-        {assign var="hide_form" value=$smarty.capture.orig_val_hide_form}
-    {/if}
-
-    {if $show_product_tabs}
-
-        {include file="views/tabs/components/product_tabs.tpl"}
-
-        {if $blocks.$tabs_block_id.properties.wrapper}
-            {include file=$blocks.$tabs_block_id.properties.wrapper content=$smarty.capture.tabsbox_content title=$blocks.$tabs_block_id.description}
-        {else}
-            {$smarty.capture.tabsbox_content nofilter}
-        {/if}
-
-    {/if}
 </div>
 
 <div class="product-details">
