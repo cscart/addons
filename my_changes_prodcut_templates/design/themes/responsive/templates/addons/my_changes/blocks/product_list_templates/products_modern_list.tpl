@@ -1,6 +1,6 @@
 {** template-description:tmpl_modern **}
 
-{include file="addons/product_templates_changes/blocks/list_templates/modern_list.tpl" 
+{include file="addons/my_changes/blocks/list_templates/modern_list.tpl" 
 show_name=true 
 show_sku=false 
 show_rating=true 

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<addon scheme="3.0">
-    <id>product_templates_changes</id>
-    <version>1.0</version>
-    <priority>4294967294</priority>
-    <position>0</position>
-    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
-    <default_language>en</default_language>
-</addon>

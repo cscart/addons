@@ -24,10 +24,7 @@
                 {if $bulk_addition}
                     <input class="cm-item ty-float-right ty-product-list__bulk" type="checkbox" id="bulk_addition_{$obj_prefix}{$product.product_id}" name="product_data[{$product.product_id}][amount]" value="{if $js_product_var}{$product.product_id}{else}1{/if}" {if ($product.zero_price_action == "R" && $product.price == 0)}disabled="disabled"{/if} />
                 {/if}
-                <div class="ty-product-list__item-name" style="padding-bottom:20px;"> 
-                            {assign var="name" value="name_$obj_id"}
-                            {$smarty.capture.$name nofilter}
-                </div>
+                
                 <div class="ty-product-list__image">
                     {hook name="products:product_block_image"}
                     <span class="cm-reload-{$obj_prefix}{$obj_id} image-reload" id="list_image_update_{$obj_prefix}{$obj_id}">
@@ -63,6 +60,10 @@
                     {* /res_delete_1 *}
 
                     <div class="ty-product-list__info">
+                        <div class="ty-product-list__item-name">
+                            {assign var="name" value="name_$obj_id"}
+                            {$smarty.capture.$name nofilter}
+                        </div>
 
                         <div class="ty-product-list__price">
                             {assign var="old_price" value="old_price_`$obj_id`"}
@@ -84,6 +85,10 @@
                         <div class="ty-product-list__feature">
                             {assign var="product_features" value="product_features_`$obj_id`"}
                             {$smarty.capture.$product_features nofilter}
+                        </div>
+                        <div class="ty-product-list__description">
+                            {assign var="prod_descr" value="prod_descr_`$obj_id`"}
+                            {$smarty.capture.$prod_descr nofilter}
                         </div>
                         
                         {if !$smarty.capture.capt_options_vs_qty}
