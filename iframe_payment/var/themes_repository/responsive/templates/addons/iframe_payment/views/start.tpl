@@ -10,6 +10,10 @@
             <label>Session ID:</label><br>
             <input type="text" name="sid" value="{$sid}" size="60" readonly>
         </p>
+        <p>
+            <label>Repay order:</label><br>
+            <input type="text" name="repay" value="{$repay}" size="60" readonly>
+        </p>
         <p><input type="submit" value="Pay"></p>
     </form>
 </div>

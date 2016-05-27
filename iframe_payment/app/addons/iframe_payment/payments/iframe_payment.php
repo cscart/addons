@@ -11,14 +11,19 @@ if (defined('PAYMENT_NOTIFICATION')) {
     if ($mode == 'process') {
         $order_nonce = $_REQUEST['order_nonce'];
         $session_id = base64_decode($_REQUEST['sid']);
-
+        $repay = $_REQUEST['repay'];
+        
         // get cart and auth data from session
         Tygh::$app['session']->resetID($session_id);
         $cart = & Tygh::$app['session']['cart'];
         $auth = & Tygh::$app['session']['auth'];
 
-        // place order
-        list($order_id, $process_payment) = fn_place_order($cart, $auth);
+        if ($repay != 'Y') {
+            // place order
+            list($order_id, $process_payment) = fn_place_order($cart, $auth);
+        } else {
+            $order_id = $order_nonce;
+        }
 
         // store additional order data
         if (!empty($order_nonce)) {
@@ -32,7 +37,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
 
         // process payment notification
         $pp_response = array(
-            'order_status' => 'C',
+            'order_status' => 'P',
             'transaction_id' => $order_nonce
         );
         fn_finish_payment($order_id, $pp_response, false);
@@ -62,14 +67,15 @@ if (defined('PAYMENT_NOTIFICATION')) {
     
     exit;
 
-} elseif (defined('IFRAME_MODE')) {
+} elseif (defined('IFRAME_MODE') || isset($mode) && $mode == 'repay') {
     // connect to emulated payment gateway
     $session_id = Tygh::$app['session']->getID();
     fn_create_payment_form(
         fn_url('iframe_payment.start'),
         array(
             'order_nonce' => $order_id,
-            'sid' => base64_encode($session_id)
+            'sid' => base64_encode($session_id),
+            'repay' => (isset($mode) && $mode == 'repay') ? 'Y' : 'N'
         ),
         'Iframe Payment',
         true,
