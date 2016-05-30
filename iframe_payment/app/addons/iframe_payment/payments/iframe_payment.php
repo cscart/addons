@@ -40,7 +40,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
             'order_status' => 'P',
             'transaction_id' => $order_nonce
         );
-        fn_finish_payment($order_id, $pp_response, false);
+        fn_finish_payment($order_id, $pp_response);
 
         fn_echo('Payment notification has been processed');
 
