@@ -76,8 +76,11 @@
                             {assign var="clean_price" value="clean_price_`$obj_id`"}
                             {$smarty.capture.$clean_price nofilter}
 
-                            {assign var="list_discount" value="list_discount_`$obj_id`"}
-                            {$smarty.capture.$list_discount nofilter}
+                            {if $show_list_discount}
+                                {assign var="list_discount" value="list_discount_`$obj_id`"}
+                                {$smarty.capture.$list_discount nofilter}
+                            {/if}
+
                         </div>
                         
                         
@@ -85,6 +88,12 @@
                             {assign var="product_features" value="product_features_`$obj_id`"}
                             {$smarty.capture.$product_features nofilter}
                         </div>
+                        {if $show_descr}
+                            <div class="ty-product-list__description">
+                                {assign var="prod_descr" value="prod_descr_`$obj_id`"}
+                                {$smarty.capture.$prod_descr nofilter}
+                            </div>
+                        {/if}
                         
                         {if !$smarty.capture.capt_options_vs_qty}
                             <div class="ty-product-list__option">
@@ -107,14 +116,17 @@
                         {assign var="min_qty" value="min_qty_`$obj_id`"}
                         {$smarty.capture.$min_qty nofilter}
 
-                        {assign var="product_edp" value="product_edp_`$obj_id`"}
-                        {$smarty.capture.$product_edp nofilter}
+                        {if $show_product_edp}
+                            {assign var="product_edp" value="product_edp_`$obj_id`"}
+                            {$smarty.capture.$product_edp nofilter}
+                        {/if}
                     </div>
-                    
-                    <div class="ty-product-list__control">
-                        {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
-                        {$smarty.capture.$add_to_cart nofilter}
-                    </div>
+                    {if $show_list_buttons}
+                        <div class="ty-product-list__control">
+                            {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
+                            {$smarty.capture.$add_to_cart nofilter}
+                        </div>
+                    {/if}
                 {/hook}
                 </div>
                 {assign var="form_close" value="form_close_`$obj_id`"}
