@@ -121,12 +121,19 @@
                             {$smarty.capture.$product_edp nofilter}
                         {/if}
                     </div>
-                    {if $show_list_buttons}
-                        <div class="ty-product-list__control">
-                            {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
-                            {$smarty.capture.$add_to_cart nofilter}
-                        </div>
+                    {if $show_add_to_cart}
+                    <div class="ty-product-list__control">
+                        
+                        {assign var="add_to_cart" value="add_to_cart_`$obj_id`"}
+                        {$smarty.capture.$add_to_cart nofilter}
+                        
+                        {if $show_list_buttons}
+                            {assign var="list_buttons" value="list_buttons_`$obj_id`"}
+                            {$smarty.capture.$list_buttons nofilter}
+                        {/if}
+                    </div>
                     {/if}
+                    
                 {/hook}
                 </div>
                 {assign var="form_close" value="form_close_`$obj_id`"}
