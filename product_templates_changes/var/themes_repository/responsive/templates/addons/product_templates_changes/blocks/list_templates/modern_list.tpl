@@ -75,12 +75,7 @@
 
                             {assign var="clean_price" value="clean_price_`$obj_id`"}
                             {$smarty.capture.$clean_price nofilter}
-
-                            {if $show_list_discount}
-                                {assign var="list_discount" value="list_discount_`$obj_id`"}
-                                {$smarty.capture.$list_discount nofilter}
-                            {/if}
-
+                            
                         </div>
                         
                         
@@ -116,10 +111,7 @@
                         {assign var="min_qty" value="min_qty_`$obj_id`"}
                         {$smarty.capture.$min_qty nofilter}
 
-                        {if $show_product_edp}
-                            {assign var="product_edp" value="product_edp_`$obj_id`"}
-                            {$smarty.capture.$product_edp nofilter}
-                        {/if}
+                        
                     </div>
                     {if $show_add_to_cart}
                     <div class="ty-product-list__control">
