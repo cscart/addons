@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>static_pages</id>
+    <name>Static pages</name>
+    <description>Renders pages from static templates</description>
+    <version>1.0</version>
+    <priority>4294967294</priority>
+    <position>0</position>
+    <status>active</status>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <default_language>en</default_language>
+    <compatibility>
+        <core_version>
+            <min>4.4.1</min>
+        </core_version>
+    </compatibility>
+    <queries>
+        <item for="install">
+            ALTER TABLE `?:pages` ADD `template` VARCHAR(64) NOT NULL DEFAULT '';
+        </item>
+        <item for="install">
+            ALTER TABLE `?:pages` ADD `is_main` char(1) NOT NULL DEFAULT 'N';
+        </item>
+
+        <item for="uninstall">
+            ALTER TABLE `?:pages` DROP `template`;
+        </item>
+        <item for="uninstall">
+            ALTER TABLE `?:pages` DROP `is_main`;
+        </item>
+    </queries>
+</addon>

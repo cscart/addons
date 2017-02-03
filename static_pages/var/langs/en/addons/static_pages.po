@@ -1,0 +1,53 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::static_pages"
+msgid "Static pages"
+msgstr "Static pages"
+
+msgctxt "Addons::description::static_pages"
+msgid "Renders pages from static templates"
+msgstr "Renders pages from static templates"
+
+msgctxt "Languages::addons.static_pages.static_page"
+msgid "Static page"
+msgstr "Static page"
+
+msgctxt "Languages::addons.static_pages.static_pages"
+msgid "Static pages"
+msgstr "Static pages"
+
+msgctxt "Languages::addons.static_pages.use_as_main_page"
+msgid "Use as the home page"
+msgstr "Use as the home page"
+
+msgctxt "Languages::addons.static_pages.use_as_main_page"
+msgid "Use as the home page"
+msgstr "Use as the home page"
+
+msgctxt "Languages::addons.static_pages.template"
+msgid "Static page template"
+msgstr "Static page template"
+
+msgctxt "Languages::addons.static_pages.add_static_page"
+msgid "Add static page"
+msgstr "Add static page"
+
+msgctxt "Languages::addons.static_pages.editing_static_page"
+msgid "Editing static page"
+msgstr "Editing static page"
+
+msgctxt "Languages::addons.static_pages.new_static_page"
+msgid "New static page"
+msgstr "New static page"
+
+msgctxt "Languages::addons.static_pages.no_templates"
+msgid "No templates were found in <strong>[tpl_dir]</strong> directory"
+msgstr "No templates were found in <strong>[tpl_dir]</strong> directory"
+
+msgctxt "Languages::addons.static_pages.shared_page_cant_be_main"
+msgid "A shared page can't be used as the home page."
+msgstr "A shared page can't be used as the home page."

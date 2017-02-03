@@ -1,0 +1,1 @@
+{style src="css/addons/static_pages/style.less"}
